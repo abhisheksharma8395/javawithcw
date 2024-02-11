@@ -1,6 +1,4 @@
 package loops;
-
-import java.awt.*;
 import java.util.Scanner;
 
 public class count_the_number_of_digit_in_number {

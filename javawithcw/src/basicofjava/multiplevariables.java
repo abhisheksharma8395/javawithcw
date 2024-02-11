@@ -2,7 +2,7 @@ package basicofjava;
 
 public class multiplevariables {
     public static void main(String[] args) {
-        int p=9,q=10,r=6;
+        int p=9,q=10,r;
         System.out.print("The value of p is :");
         System.out.println(p);
         System.out.println("The value of q is :"+q);
