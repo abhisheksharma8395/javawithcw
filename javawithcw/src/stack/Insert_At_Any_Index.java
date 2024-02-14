@@ -9,7 +9,7 @@ public class Insert_At_Any_Index {
         Stack<Integer> st1 = new Stack<>();
         Stack<Integer> st2 = new Stack<>();
         int n;
-        System.out.println("Enter the Number Of Element You Wanna be to Store :");
+        System.out.println("Please Enter the Number Of Element You Wanna be to Store :");
         n=sc.nextInt();
         System.out.println("Enter Elements :");
         while(n>0){
