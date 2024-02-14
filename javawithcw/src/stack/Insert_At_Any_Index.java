@@ -1,0 +1,37 @@
+package stack;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Insert_At_Any_Index {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Stack<Integer> st1 = new Stack<>();
+        Stack<Integer> st2 = new Stack<>();
+        int n;
+        System.out.println("Enter the Number Of Element You Wanna be to Store :");
+        n=sc.nextInt();
+        System.out.println("Enter Elements :");
+        while(n>0){
+            st1.push(sc.nextInt());
+            n--;
+        }
+        System.out.println("The Original Stack "+st1);
+        int x,y;
+        System.out.println("Enter the index :");
+        x=sc.nextInt();
+        System.out.println("Enter the value :");
+        y=sc.nextInt();
+        while(st1.size()>x){
+            st2.push(st1.peek());
+            st1.pop();
+        }
+        st1.push(y);
+        while(st2.size()>0){
+            st1.push(st2.peek());
+            st2.pop();
+        }
+        System.out.println("The Updated Stack "+st1);
+
+    }
+}
