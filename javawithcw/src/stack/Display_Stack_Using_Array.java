@@ -25,7 +25,7 @@ public class Display_Stack_Using_Array {
             System.out.print(myarr[j]+" ");
             st.push(myarr[j]);
         }
-        System.out.println("");
+        System.out.println(" ");
         System.out.println(st);
 
     }
