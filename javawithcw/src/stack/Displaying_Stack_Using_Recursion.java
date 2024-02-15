@@ -11,6 +11,13 @@ public class Displaying_Stack_Using_Recursion {
         display_recursively(st1);
         st1.push(x);
     }
+    public static void display_recursively_inSameOrder(Stack<Integer> st2) {
+        if(st2.size()==0) return;
+        int x = st2.pop();
+        display_recursively(st2);
+        System.out.print(x+" ");
+        st2.push(x);
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -25,5 +32,7 @@ public class Displaying_Stack_Using_Recursion {
             p--;
         }
         display_recursively(st);
+        System.out.println(" ");
+        display_recursively_inSameOrder(st);
     }
 }
