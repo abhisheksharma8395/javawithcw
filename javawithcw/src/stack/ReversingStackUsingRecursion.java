@@ -1,7 +1,5 @@
 package stack;
 
-import java.util.Arrays;
-import java.util.Scanner;
 import java.util.Stack;
 
 public class ReversingStackUsingRecursion {
@@ -23,7 +21,6 @@ public class ReversingStackUsingRecursion {
 
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         Stack<Integer> st1 = new Stack<>();
         st1.push(1);
         st1.push(2);
