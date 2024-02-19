@@ -4,6 +4,10 @@ public class StackImplementationUsingArray {
         int[] myarr=new int[5];
         int idx=0;
         void push(int val){
+            if(isfull()){
+                System.err.println("Stack Overloaded");
+                return;
+            }
             myarr[idx]=val;
             idx++;
         }
@@ -31,6 +35,16 @@ public class StackImplementationUsingArray {
         int size(){
             return idx;
         }
+        boolean isEmpty(){
+            if(idx==0){
+                return true;
+            }
+            return false;
+        }
+        boolean isfull(){
+            if(idx== myarr.length) return true;
+            return false;
+        }
     }
     public static void main(String[] args) {
         Stack st=new Stack();
@@ -43,5 +57,7 @@ public class StackImplementationUsingArray {
         System.out.println(st.peek()); //7
         st.display();   //4 5 6 7
         System.out.println(st.size());  //4
+        System.out.println(st.isEmpty());   //false
+        System.out.println(st.isfull());
     }
 }
