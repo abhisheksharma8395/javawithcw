@@ -5,7 +5,7 @@ public class StackImplementationUsingArray {
         int idx=0;
         void push(int val){
             if(isfull()){
-                System.err.println("Stack Overloaded");
+                System.err.println("Stack Overloaded you cannot enter another values to stack");
                 return;
             }
             myarr[idx]=val;
@@ -53,7 +53,7 @@ public class StackImplementationUsingArray {
         st.push(6);
         st.push(7);
         st.push(8);
-        st.pop();
+        //st.pop();
         System.out.println(st.peek()); //7
         st.display();   //4 5 6 7
         System.out.println(st.size());  //4
