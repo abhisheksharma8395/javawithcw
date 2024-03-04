@@ -11,7 +11,7 @@ public class StackImplementationUsingLinkedList {
     }
 
     public static class Stack {
-        StackNode top = null;
+        StackNode top=null;
         int size = 0;
 
         void push(int val) {
@@ -43,13 +43,18 @@ public class StackImplementationUsingLinkedList {
         int size(){
             return size;
         }
-        private void display(){
+        private void displayreverse(){
             StackNode temp=top;
             while(temp!=null){
                 System.out.print(temp.data+" ");
                 temp=temp.next;
             }
             System.out.println(" ");
+        }
+        private void display(StackNode top){
+            if(top==null) return;
+            display(top.next);
+            System.out.print(top.data+" ");
         }
 
         private boolean isEmpty() {
@@ -64,9 +69,9 @@ public class StackImplementationUsingLinkedList {
         st.push(6);
         st.push(7);
         st.push(8);
-        //st.pop();
+        st.pop();
         System.out.println(st.peek()); //7
-        st.display();   //4 5 6 7
+        st.displayreverse();   //7 6 5 4
         System.out.println(st.size());  //4
         System.out.println(st.isEmpty());   //false
     }
