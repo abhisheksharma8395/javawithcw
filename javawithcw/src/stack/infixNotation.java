@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class infixNotation {
     public static void main(String[] args) {
-        String st="9-5+3*4/6";
+        String st="9-(5+3)*4/6";
         Stack<Integer> val=new Stack<>();
         Stack<Character> op=new Stack<>();
         for (int i = 0; i <st.length(); i++) {
@@ -12,10 +12,28 @@ public class infixNotation {
             if((int) ch >=48 && (int) ch <=57){
                 val.push((int) ch -48);
             }
-            else if(op.size()==0){
+            else if(op.size()==0 || op.peek()=='(' || ch=='('){
                 op.push(ch);
-            }
-            else{
+            } else if (ch==')') {
+                while(op.peek()!='('){
+                    int val8=val.pop();
+                    int val7=val.pop();
+                    if(op.peek()=='-'){
+                        val.push(val7-val8);
+                    }
+                    else if(op.peek()=='+'){
+                        val.push(val7+val8);
+                    }
+                    else if(op.peek()=='*'){
+                        val.push(val7*val8);
+                    }
+                    else if(op.peek()=='/'){
+                        val.push(val7/val8);
+                    }
+                    op.pop();
+                }
+                op.pop();
+            } else{
                 if(ch=='+' || ch=='-'){
                     int val2 = val.pop();
                     int val1 = val.pop();
