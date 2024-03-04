@@ -16,7 +16,7 @@ public class PostfixEvaluation {
                 if(ch=='+') val.push(var1+var2);
                 else if(ch=='-') val.push(var1-var2);
                 else if(ch=='*') val.push(var1*var2);
-                else if(ch=='/') val.push(var1/var2);
+                else val.push(var1/var2);
             }
         }
         System.out.println(val.peek());
