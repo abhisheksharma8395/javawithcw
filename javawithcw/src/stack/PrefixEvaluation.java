@@ -12,7 +12,7 @@ public class PrefixEvaluation {
                 val.push((int) ch-48);
             } else if (ch=='+'||ch=='-'||ch=='*'||ch=='/') {
                 int var1=val.pop();
-                int var2=val.pop();
+                int var2 =val.pop();
                 if(ch=='+') val.push(var1+var2);
                 else if(ch=='-') val.push(var1-var2);
                 else if(ch=='*') val.push(var1*var2);
