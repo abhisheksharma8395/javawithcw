@@ -6,7 +6,7 @@ import java.util.Stack;
 public class ReverseStringByStack {
     public static void main(String[] args) {
         Scanner sc =new Scanner(System.in);
-        Stack<Character> st=new Stack();
+        Stack<Character> st=new Stack<>();
         System.out.println("Enter your String");
         String a=sc.next();
         int idx=0;
