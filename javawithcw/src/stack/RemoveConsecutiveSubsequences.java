@@ -1,3 +1,5 @@
+//Given a sequence of Numbers Remove all the subsequences of length greater than or equal
+//to 2 that contains the same element.
 package stack;
 
 import java.util.Stack;
@@ -11,6 +13,11 @@ public class RemoveConsecutiveSubsequences {
             }
             else if(st.peek()!=myarr[i]){
                 st.push(myarr[i]);
+            }
+            else if(st.peek()==myarr[i]){
+                if(myarr[i]!=myarr[i+1]){
+                    st.pop();
+                }
             }
         }
         int l=st.size();
