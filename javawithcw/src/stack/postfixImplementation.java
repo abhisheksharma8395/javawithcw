@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class postfixImplementation {
     public static void main(String[] args) {
-        String infix="9-(5+3)*4/6";
+        String infix="3+6+8*4+7";
         Stack<String> val=new Stack<>();
         Stack<Character> op=new Stack<>();
         for (int i = 0; i <infix.length(); i++) {
@@ -20,7 +20,7 @@ public class postfixImplementation {
                     String a=val.pop();
                     String b=val.pop();
                     char o=op.pop();
-                    String t=o+b+a;
+                    String t=b+a+o;
                     val.push(t);
                 }
                 op.pop();
@@ -29,7 +29,7 @@ public class postfixImplementation {
                     String a=val.pop();
                     String b=val.pop();
                     char o=op.pop();
-                    String t=o+b+a;
+                    String t=b+a+o;
                     val.push(t);
                     op.push(ch);
                 } else if (ch=='/' || ch=='*') {
@@ -37,7 +37,7 @@ public class postfixImplementation {
                         String a=val.pop();
                         String b=val.pop();
                         char o=op.pop();
-                        String t=o+b+a;
+                        String t=b+a+o;
                         val.push(t);
                         op.push(ch);
                     }
@@ -52,7 +52,7 @@ public class postfixImplementation {
             String a=val.pop();
             String b=val.pop();
             char o=op.pop();
-            String t=o+b+a;
+            String t=b+a+o;
             val.push(t);
         }
         System.out.println(val.peek());
