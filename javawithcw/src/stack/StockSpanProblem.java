@@ -16,7 +16,7 @@ public class StockSpanProblem {
                     st.pop();
                 }
                 if(st.size()==0){
-                    myarr2[i]=i;
+                    myarr2[i]=i+1;
                 }
                 else{
                     myarr2[i]=i-st.peek();
