@@ -31,8 +31,8 @@ public class NextGreaterElementByStack {
     public static void main(String[] args) {
         int[] arr1={1,6,4,8,9,3,6,7};
         int[] res=NgeByStack(arr1);
-        for (int i = 0; i < res.length; i++) {
-            System.out.print(res[i]+",");
+        for (int re : res) {
+            System.out.print(re + ",");
         }
     }
 }
