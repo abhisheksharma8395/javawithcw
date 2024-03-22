@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 public class FibonicciSeries {
     static int fibonicci(int val) {
-        if (val == 0) {
+        if (val == 0) {          //base condition
             return val;
-        } else if (val == 1) {
+        } else if (val == 1) {   //base condition
             return val;
         }
+        //subproblem
         return fibonicci(val - 1) + fibonicci(val - 2);
+        //+ is the self work
     }
 
     public static void main(String[] args) {
