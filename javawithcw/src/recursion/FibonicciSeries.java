@@ -4,9 +4,7 @@ import java.util.Scanner;
 
 public class FibonicciSeries {
     static int fibonicci(int val) {
-        if (val == 0) {          //base condition
-            return val;
-        } else if (val == 1) {   //base condition
+        if (val == 0 || val == 1) {          //base condition
             return val;
         }
         //subproblem
