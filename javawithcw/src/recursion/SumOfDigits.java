@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class SumOfDigits {
     static int sumofdigit(int n){
-        if(n==0){
-            return 0;
+        if(n>=0 && n<=9){
+            return n;
         }
-        return ((n%10)+(sumofdigit(n/10)));
+        return (sumofdigit(n/10)+(n%10));
     }
 
     public static void main(String[] args) {
