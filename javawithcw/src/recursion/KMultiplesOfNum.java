@@ -4,10 +4,14 @@ import java.util.Scanner;
 
 public class KMultiplesOfNum {
     public static void kmultipleofnum(int val,int noofmultiples){
-        if(noofmultiples==0){
-            return ;
+        //Base case
+        if(noofmultiples==1){
+            System.out.print(val*noofmultiples+" ");
+            return;
         }
+        //Subproblems
         kmultipleofnum(val,noofmultiples-1);
+        //self work
         System.out.print(val*noofmultiples+" ");
     }
 
