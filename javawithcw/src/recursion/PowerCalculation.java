@@ -1,7 +1,7 @@
 package recursion;
 import java.util.Scanner;
 public class PowerCalculation {
-    public static int powercalculation(int val,int pow){
+    public static int powercalculation(int val,int pow){      //p is val and q is power
         if(pow == 0){
             return 1;
         }
