@@ -9,7 +9,7 @@ public class GCDCalculationByEuclidsAlgorithm {
             return val2;
         }
         //Euclid Algorithm
-        //
+        //gcd(val1,val2)=gcd(val2,val1%val2)
         return eagcdr(val2,val1%val2);
     }
     public static void main(String[] args) {
