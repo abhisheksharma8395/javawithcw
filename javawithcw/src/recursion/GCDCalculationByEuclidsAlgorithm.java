@@ -3,6 +3,7 @@ package recursion;
 import java.util.Scanner;
 
 public class GCDCalculationByEuclidsAlgorithm {
+
     public static int eagcdr(int val1,int val2){
         if(val1%val2==0){
             return val2;
