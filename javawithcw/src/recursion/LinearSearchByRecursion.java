@@ -3,14 +3,14 @@ package recursion;
 import java.util.Scanner;
 
 public class LinearSearchByRecursion {
-    private static boolean linearsearch(int[]arr,int target,int idx){
+    private static int linearsearch(int[]arr,int target,int idx){
         //Base Case
         if(idx == arr.length){
-            return false;
+            return -1;
         }
         //Selfwork
         if (arr[idx] == target){
-            return true;
+            return idx;
         }
         //Subproblem
         return linearsearch(arr,target,idx+1);
@@ -23,11 +23,6 @@ public class LinearSearchByRecursion {
             arr[i] = scanner.nextInt();
         }
         int target = scanner.nextInt();
-        if(linearsearch(arr,target,0)){
-            System.out.println("YES");
-        }
-        else{
-            System.out.println("NO");
-        }
+        System.out.println(linearsearch(arr,target,0));
     }
 }
