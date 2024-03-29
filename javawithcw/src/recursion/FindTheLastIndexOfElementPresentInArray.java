@@ -1,6 +1,4 @@
 package recursion;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FindTheLastIndexOfElementPresentInArray {
@@ -13,10 +11,7 @@ public class FindTheLastIndexOfElementPresentInArray {
             last = idx;
         }
         int subproblems = findlastindex(array, target, idx+1);
-        if(subproblems > last){
-            return subproblems;
-        }
-        return last;
+        return Math.max(subproblems, last);
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
