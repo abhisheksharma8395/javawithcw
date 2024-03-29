@@ -7,10 +7,10 @@ public class FindTheLastIndexOfElementPresentInArray {
         if(idx == array.length){   //Base Case
             return last;
         }
-        if(array[idx] == target){
+        if(array[idx] == target){       //Self Work
             last = idx;
         }
-        int subproblems = findlastindex(array, target, idx+1);
+        int subproblems = findlastindex(array, target, idx+1); //Subproblem Solving
         return Math.max(subproblems, last);
     }
     public static void main(String[] args) {
