@@ -18,16 +18,20 @@ public class RemoveAllOccurrences {
     }
 
     public static String removeOccurrence(String s, char remove, int idx) {
-        String a = "";
         if (idx == s.length()) {          //Base Case
-            return a;
+            return "";
         }
+        String small = removeOccurrence(s, remove, idx + 1);  //SubProblem
         char currentCharacter = s.charAt(idx);
         if (currentCharacter != remove) {       //Self Work
-            a = a + currentCharacter;
+            return currentCharacter + small;
+        } else {
+            return small;                            //Self Work + SubProblem
         }
-        String small = removeOccurrence(s, remove, idx + 1);  //Subproblem
-        return a + small;                           //Self Work + Subproblem
+        //time complexity = no of calls * total time taken in one call
+        // time complexity = length of string + 1 * total time taken in one call
+        // time complexity = n * n
+        // time complexity = O(n^2)
     }
 
     public static void main(String[] args) {
