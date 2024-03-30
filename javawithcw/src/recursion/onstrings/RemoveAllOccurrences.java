@@ -9,12 +9,12 @@ public class RemoveAllOccurrences {
         if (s.isEmpty()) {
             return a;
         }
-        char currentCharacter = s.charAt(0);
-        if (currentCharacter != remove) {
-            a += currentCharacter;
-        }
+        char currentCharacter = s.charAt(0);      //time complexity = no of calls * total time taken in one call
+        if (currentCharacter != remove) {         // time complexity = length of string + 1 * total time taken in one call
+            a += currentCharacter;                // time complexity = n * n
+        }                                         // time complexity = O(n^2)
         String smallAns = removeOccurrence2(s.substring(1), remove);
-        return a + smallAns;
+        return a + smallAns;                      //String concatenation is of O(n) time complexity
     }
 
     public static String removeOccurrence(String s, char remove, int idx) {
