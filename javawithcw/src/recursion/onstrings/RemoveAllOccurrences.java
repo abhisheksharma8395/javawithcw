@@ -1,7 +1,7 @@
 package recursion.onstrings;
 import java.util.Scanner;
 public class RemoveAllOccurrences {
-    //remove all the occurrences of a from string abcax
+    //que-remove all the occurrences of a from string abcax
     public static String removeOccurrence(String s,char remove,int idx){
         String a = "";
         if(idx == s.length()){          //Base Case
