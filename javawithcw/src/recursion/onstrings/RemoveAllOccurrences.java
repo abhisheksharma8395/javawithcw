@@ -5,16 +5,17 @@ import java.util.Scanner;
 public class RemoveAllOccurrences {
     //que-remove all the occurrences of a from string abcax
     public static String removeOccurrence2(String s, char remove) {
-        String a = "";
         if (s.isEmpty()) {
-            return a;
+            return "";
         }
+        String smallAns = removeOccurrence2(s.substring(1), remove);
         char currentCharacter = s.charAt(0);      //time complexity = no of calls * total time taken in one call
         if (currentCharacter != remove) {         // time complexity = length of string + 1 * total time taken in one call
-            a += currentCharacter;                // time complexity = n * n
+            return currentCharacter+smallAns;                // time complexity = n * n
         }                                         // time complexity = O(n^2)
-        String smallAns = removeOccurrence2(s.substring(1), remove);
-        return a + smallAns;                      //String concatenation is of O(n) time complexity
+        else{
+            return smallAns;                      //String concatenation is of O(n) time complexity
+        }
     }
 
     public static String removeOccurrence(String s, char remove, int idx) {
