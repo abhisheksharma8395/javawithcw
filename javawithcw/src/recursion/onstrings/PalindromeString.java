@@ -1,7 +1,5 @@
 package recursion.onstrings;
-
 import java.util.Scanner;
-
 public class PalindromeString {
     private static boolean palindrome(String s) {
         if (s.isEmpty() || s.length() == 1) {
