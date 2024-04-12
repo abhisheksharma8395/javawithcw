@@ -6,8 +6,10 @@ public class SumOfAllSubsets {
     private static void SumOfSubsets(int[] arr, int sum, int idx) {
         if (idx >= arr.length) {
             System.out.println(sum);
+            return;
         }
-        SumOfSubsets(arr, sum + arr[idx], idx + 1);
+        int num = arr[idx];
+        SumOfSubsets(arr, sum + num, idx + 1);
         SumOfSubsets(arr, sum, idx + 1);
     }
 
