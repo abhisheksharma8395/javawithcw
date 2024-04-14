@@ -10,8 +10,8 @@ public class RatInMazeTwoDirection {
         if (sr == er && sc == ec) {
             System.out.println(s);
         }
-        printWays(sr + 1, sc, er, ec, s + "D");
-        printWays(sr, sc + 1, er, ec, s + "R");
+        printWays(sr + 1, sc, er, ec, s + "D");  //going Downwards
+        printWays(sr, sc + 1, er, ec, s + "R");  //going Upwards
     }
 
     private static int countWays(int sr, int sc, int er, int ec, int sum) {
