@@ -25,6 +25,7 @@ public class RatInMazeFourDirection {
         arr[sr][sc]=false;
     }
 
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int er = sc.nextInt();
