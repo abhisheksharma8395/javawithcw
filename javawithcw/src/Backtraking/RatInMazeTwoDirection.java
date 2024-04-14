@@ -11,18 +11,18 @@ public class RatInMazeTwoDirection {
             System.out.println(s);
         }
         printWays(sr + 1, sc, er, ec, s + "D");  //going Downwards
-        printWays(sr, sc + 1, er, ec, s + "R");  //going Upwards
+        printWays(sr, sc + 1, er, ec, s + "R");  //going rightwars
     }
 
-    private static int countWays(int sr, int sc, int er, int ec, int sum) {
+    private static int countWays(int sr, int sc, int er, int ec) {
         if (sr > er || sc > ec) {
             return 0;
         }
         if (sr == er && sc == ec) {
             return 1;
         }
-        int downways = countWays(sr + 1, sc, er, ec, sum);
-        int rightways = countWays(sr, sc + 1, er, ec, sum);
+        int downways = countWays(sr + 1, sc, er, ec);
+        int rightways = countWays(sr, sc + 1, er, ec);
         return downways+rightways;
     }
 
@@ -31,7 +31,7 @@ public class RatInMazeTwoDirection {
         int er = sc.nextInt();
         int ec = sc.nextInt();
         System.out.print("Total number of Ways : ");
-        System.out.println(countWays(1, 1, er, ec, 0));
+        System.out.println(countWays(1, 1, er, ec));
         printWays(1, 1, er, ec, "");
 
     }
