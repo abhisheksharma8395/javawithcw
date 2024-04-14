@@ -18,10 +18,10 @@ public class RatInMazeFourDirection {
             return;
         }
         arr[sr][sc]=true;
-        printPath(sr + 1, sc, er, ec, s + "D", arr);
-        printPath(sr - 1, sc, er, ec, s + "U", arr);
-        printPath(sr, sc + 1, er, ec, s + "R", arr);
-        printPath(sr, sc - 1, er, ec, s + "L", arr);
+        printPath(sr + 1, sc, er, ec, s + "D", arr);   //going Downwards
+        printPath(sr - 1, sc, er, ec, s + "U", arr);    //going Upwards
+        printPath(sr, sc + 1, er, ec, s + "R", arr);     //going Rightwards
+        printPath(sr, sc - 1, er, ec, s + "L", arr);     //going Leftwards
         arr[sr][sc]=false;
     }
 
