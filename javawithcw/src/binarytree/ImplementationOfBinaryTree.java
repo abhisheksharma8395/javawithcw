@@ -11,6 +11,12 @@ public class ImplementationOfBinaryTree {
             this.data = data;
         }
     }
+    public static void PreorderTraversal(BinaryTreeNode root){
+        //preorder is root left right
+        System.out.println(root.data);
+        PreorderTraversal(root.LeftNode);
+        PreorderTraversal(root.RightNode);
+    }
     public static void display(BinaryTreeNode root){
         if (root == null) return;
         System.out.print(root.data+" -> ");
@@ -22,11 +28,11 @@ public class ImplementationOfBinaryTree {
         display(root.RightNode);
     }
     public static int findMax(BinaryTreeNode root){
-        if(root==null) return 0;
+        if(root==null) return Integer.MIN_VALUE;
         return Math.max(root.data,Math.max(findMax(root.LeftNode),findMax(root.RightNode)));
     }
     public static int findMin(BinaryTreeNode root){
-        if(root==null) return 0;
+        if(root==null) return Integer.MAX_VALUE;        //return Max value
         return Math.min(root.data,Math.min(findMin(root.LeftNode),findMin(root.RightNode)));
     }
     public static int product(BinaryTreeNode root){
