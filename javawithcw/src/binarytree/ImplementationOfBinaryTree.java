@@ -13,7 +13,8 @@ public class ImplementationOfBinaryTree {
     }
     public static void PreorderTraversal(BinaryTreeNode root){
         //preorder is root left right
-        System.out.println(root.data);
+        if(root==null) return;
+        System.out.print(root.data);
         PreorderTraversal(root.LeftNode);
         PreorderTraversal(root.RightNode);
     }
@@ -81,5 +82,6 @@ public class ImplementationOfBinaryTree {
         System.out.println(findMax(root));
         System.out.println(findMin(root));
         System.out.println(product(root));
+        PreorderTraversal(root);
     }
 }
