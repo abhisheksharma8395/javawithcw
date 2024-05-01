@@ -15,8 +15,14 @@ public class PreorderPostorderInorderTraversal {
         a.RightNode = d;
         b.RightNode = e;
         e.LeftNode = f;
+        preorder(root);
     }
-    public 
+    public static void preorder(BinaryTreeNode root){
+        if(root==null) return;
+        System.out.print(root.data+",");
+        preorder(root.LeftNode);
+        preorder(root.RightNode);
+    }
 
     public static class BinaryTreeNode {
         int data;
