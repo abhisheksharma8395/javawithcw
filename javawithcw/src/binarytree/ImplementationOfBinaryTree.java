@@ -40,22 +40,24 @@ public class ImplementationOfBinaryTree {
         return root.data+sumOfNodes(root.LeftNode)+sumOfNodes(root.RightNode);
     }
     public static int height(BinaryTreeNode root){
-        if(root==null) return 0;
+        if(root==null || (root.LeftNode==null && root.RightNode==null)) return 0;
         return 1+Math.max(height(root.LeftNode),height(root.RightNode));
     }
 
     public static void main(String[] args) {
-        BinaryTreeNode root = new BinaryTreeNode(2);
+        BinaryTreeNode root = new BinaryTreeNode(1);
         BinaryTreeNode a = new BinaryTreeNode(4);
-        BinaryTreeNode b = new BinaryTreeNode(10);
-        BinaryTreeNode c = new BinaryTreeNode(6);
+        BinaryTreeNode b = new BinaryTreeNode(7);
+        BinaryTreeNode c = new BinaryTreeNode(2);
         BinaryTreeNode d = new BinaryTreeNode(5);
-        BinaryTreeNode e = new BinaryTreeNode(11);
+        BinaryTreeNode e = new BinaryTreeNode(8);
+        BinaryTreeNode f = new BinaryTreeNode(9);
         root.LeftNode = a;
         root.RightNode = b;
         a.LeftNode = c;
         a.RightNode = d;
         b. RightNode = e;
+        e.LeftNode = f;
         display(root);
         size(root);
         System.out.println(size);
