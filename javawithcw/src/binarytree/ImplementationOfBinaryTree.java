@@ -21,7 +21,10 @@ public class ImplementationOfBinaryTree {
         display(root.LeftNode);
         display(root.RightNode);
     }
-
+    public static int findMax(BinaryTreeNode root){
+        if(root==null) return 0;
+        return Math.max(root.data,Math.max(findMax(root.LeftNode),findMax(root.RightNode)));
+    }
     public static void size(BinaryTreeNode root) {
         if (root == null) return;
         size = size + 1;
@@ -59,5 +62,6 @@ public class ImplementationOfBinaryTree {
         System.out.println(sizeAdvanced(root));
         System.out.println(sumOfNodes(root));
         System.out.println(height(root));
+        System.out.println(findMax(root));
     }
 }
