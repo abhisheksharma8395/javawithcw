@@ -19,15 +19,16 @@ class ArrayExample{
             System.out.println(" ");
         }
         for(int i : singleDArray){         //for each loop
-            System.out.println(i);
+            System.out.print(i+" ");
         }
+        System.out.println(" ");
     }
     void traversingR(int[] arr,int idx){
         int n = arr.length;
         if(idx >= n){
             return;
         }
-        System.out.println(arr[idx]);
+        System.out.print(arr[idx]+" ");
         traversingR(arr,idx+1);
     }
     void demoArray(int a){
@@ -41,10 +42,12 @@ class ArrayExample{
 }
 public class BasicsOfArrays {
     public static void main(String[] args) {
+        int[] Array = {2,4,6,8,10,12,14};
         ArrayExample arrayExample = new ArrayExample();
         int a = 5;
         arrayExample.demoArray(a);
         arrayExample.multidimensonal();
         arrayExample.traversing();
+        arrayExample.traversingR(Array,0);
     }
 }
