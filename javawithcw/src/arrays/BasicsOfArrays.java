@@ -10,6 +10,7 @@ class ArrayExample{
         System.out.println(array[1][1][0]);
     }
     void traversing(){
+        int[] singleDArray = {5,10,15,20,25,30};
         int[][] arr = {{1,2},{2,4},{4,5},{6,2}};
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 2; j++) {
@@ -17,6 +18,17 @@ class ArrayExample{
             }
             System.out.println(" ");
         }
+        for(int i : singleDArray){         //for each loop
+            System.out.println(i);
+        }
+    }
+    void traversingR(int[] arr,int idx){
+        int n = arr.length;
+        if(idx >= n){
+            return;
+        }
+        System.out.println(arr[idx]);
+        traversingR(arr,idx+1);
     }
     void demoArray(int a){
         int[] arr = {4,5,3,2,7,8};
