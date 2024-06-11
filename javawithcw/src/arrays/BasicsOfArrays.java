@@ -1,6 +1,6 @@
 package arrays;
 
-import java.sql.SQLOutput;
+
 
 class ArrayExample{
     void multidimensonal(){
@@ -8,6 +8,15 @@ class ArrayExample{
         int[][][] array = {{{1,2},{2,4}},{{4,5},{6,2}}};
         System.out.println(arr[2][2]);
         System.out.println(array[1][1][0]);
+    }
+    void traversing(){
+        int[][] arr = {{1,2},{2,4},{4,5},{6,2}};
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println(" ");
+        }
     }
     void demoArray(int a){
         int[] arr = {4,5,3,2,7,8};
@@ -24,5 +33,6 @@ public class BasicsOfArrays {
         int a = 5;
         arrayExample.demoArray(a);
         arrayExample.multidimensonal();
+        arrayExample.traversing();
     }
 }
