@@ -5,9 +5,19 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class TwoSum {
+    public static int TwoSumRecursion(int[] array, int target) {
+        int count = 0;
+        Arrays.sort(array);
+        for (int i = 0; i < array.length; i++) {
+            count += recursionHelper(array, target, i + 1, Math.abs(array[i] - target));
+        }
+        return count;
+
+    }
+
     public static int pairsIterative(int[] array, int target) {
         int numbersOfPairs = 0;
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             for (int j = i + 1; j < array.length; j++) {
                 if ((array[i] + array[j]) == target) {
                     numbersOfPairs += 1;
@@ -40,9 +50,9 @@ public class TwoSum {
         int n = array.length;
         Arrays.sort(array);
         int pairs = 0;
-        for (int i = 0; i < n-1; i++) {
+        for (int i = 0; i < n - 1; i++) {
             int required = Math.abs(array[i] - target);
-            pairs = pairs + BinarySearch(array, required, i+1, n - 1);
+            pairs = pairs + BinarySearch(array, required, i + 1, n - 1);
         }
         return pairs;
     }
@@ -61,6 +71,16 @@ public class TwoSum {
         return 0;
     }
 
+    public static int recursionHelper(int[] array, int target, int StartingIdx, int required) {  //Helper function of TwoSumRecursion function
+        if (StartingIdx >= array.length) {
+            return 0;
+        }
+        if (array[StartingIdx] == required) {
+            return 1;
+        }
+        return recursionHelper(array, target, StartingIdx + 1, required);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[] Array = new int[6];
@@ -68,8 +88,9 @@ public class TwoSum {
             Array[i] = sc.nextInt();
         }
         int target = sc.nextInt();
-        System.out.println("By iterative method O(n^2) :"+pairsIterative(Array,target));
-        System.out.println("By sorting and two pointer O(nlogn):"+pairsIterativeLessTimeComplexityy(Array,target));
-        System.out.println("By Binary Search O(nlogn)"+pairBinarySearch(Array,target));
+        System.out.println("By iterative method O(n^2) : " + pairsIterative(Array, target));
+        System.out.println("By sorting and two pointer O(nlogn) : " + pairsIterativeLessTimeComplexityy(Array, target));
+        System.out.println("By Binary Search O(nlogn) : " + pairBinarySearch(Array, target));
+        System.out.println("By Recursion O(n^2) : " + TwoSumRecursion(Array, target));
     }
 }
