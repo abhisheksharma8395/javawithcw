@@ -19,7 +19,7 @@ public class PrintElementOfNthLevel {
         e.LeftNode = f;
         d.LeftNode = g;
         d.RightNode = h;
-        int n = height(root);
+        int n = height(root)+1;
         System.out.println(n);
         for (int i = 1; i <=n; i++) {
             Nthlevel(root,i);
@@ -28,12 +28,15 @@ public class PrintElementOfNthLevel {
 
     }
     public static int height(BinaryTreeNode root){
-        if(root==null) return 0;
+        if(root==null ||(root.LeftNode==null && root.RightNode==null)) return 0;
         return 1+Math.max(height(root.LeftNode),height(root.RightNode));
     }
     public static void Nthlevel(BinaryTreeNode root,int n){
         if (root==null) return;
-        if(n==1) System.out.print(root.data+",");
+        if(n==1){
+            System.out.print(root.data+" ");
+            return;
+        }
         Nthlevel(root.LeftNode,n-1);
         Nthlevel(root.RightNode,n-1);
     }
