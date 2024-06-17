@@ -1,6 +1,5 @@
 package arrays.questions;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class SecondLargestElement {
@@ -14,16 +13,18 @@ public class SecondLargestElement {
         }
         return max;
     }
+
     public static int SecondMax(int[] array) {
 
         int max = FindMax(array);
         for (int i = 0; i < array.length; i++) {
-            if(array[i]==max){
-                array[i]=Integer.MIN_VALUE;
+            if (array[i] == max) {
+                array[i] = Integer.MIN_VALUE;
             }
         }
         return FindMax(array);
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -31,6 +32,6 @@ public class SecondLargestElement {
         for (int i = 0; i < Array.length; i++) {
             Array[i] = sc.nextInt();
         }
-        System.out.println("Second Largest Element in the array in O(3n) : "+SecondMax(Array));
+        System.out.println("Second Largest Element in the array in O(3n) : " + SecondMax(Array));
     }
 }
