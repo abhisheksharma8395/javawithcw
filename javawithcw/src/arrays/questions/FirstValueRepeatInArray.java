@@ -48,6 +48,6 @@ public class FirstValueRepeatInArray {
             Array[i] = sc.nextInt();
         }
         System.out.println("Second Largest Element in the array in O(n^2) : " + FirstRepeat(Array));
-        System.out.println("Second Largest Element in the array in O(nlogn) : " + FirstRepeatInLessTimeComplexity(Array));
+        System.out.println("Second Largest Element in the array in O(nlogn) : " + FirstRepeatInLessTimeComplexity(Array)); //it is necessary for this to array should be is sorted
     }
 }
