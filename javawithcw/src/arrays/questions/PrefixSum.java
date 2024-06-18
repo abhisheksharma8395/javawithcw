@@ -18,7 +18,7 @@ public class PrefixSum {
         }
         System.out.println(" ");
     }
-    public static void PrefixSumArrayInLessTimeCOmplexity(int[] array) {
+    public static void PrefixSumArrayInLessTimeComplexity(int[] array) {
         int n = array.length;
         int[] arr = new int[n];
         arr[0] = array[0];
@@ -30,7 +30,7 @@ public class PrefixSum {
         }
         System.out.println(" ");
     }
-    public static void PrefixSumArrayInLessTimeCOmplexityWithoutExtraSpace(int[] array) {
+    public static void PrefixSumArrayInLessTimeComplexityWithoutExtraSpace(int[] array) {
         int n = array.length;
         for (int i = 1; i < n; i++) {
             array[i] = array[i]+array[i-1];
@@ -51,8 +51,8 @@ public class PrefixSum {
         System.out.println("Prefix Sum Array in O(n^2) is : ");
         PrefixSumArray(Array);
         System.out.println("Prefix Sum Array in O(2n) is : ");
-        PrefixSumArrayInLessTimeCOmplexity(Array);
+        PrefixSumArrayInLessTimeComplexity(Array);
         System.out.println("Prefix Sum Array in O(2n) Without Extra Space is : ");
-        PrefixSumArrayInLessTimeCOmplexityWithoutExtraSpace(Array);
+        PrefixSumArrayInLessTimeComplexityWithoutExtraSpace(Array);
     }
 }
