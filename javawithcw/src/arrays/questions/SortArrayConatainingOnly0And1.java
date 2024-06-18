@@ -34,7 +34,6 @@ public class SortArrayConatainingOnly0And1 {
                 array[n - i - 1] = temp;
             }
         }
-        System.out.println(" ");
         for (int i : array) {
             System.out.print(i + " ");
         }
