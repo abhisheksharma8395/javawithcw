@@ -21,6 +21,21 @@ public class PartitionArrayWithEqualSum_25 {
         }
         return false;
     }
+    public static boolean ArrayWithEqualSumInLessTImeComplexity(int[] array) {
+        int totalsum = 0 ;
+        for(int i : array){
+            totalsum += i;
+        }
+        int PrefixSum = 0;
+        for (int i : array) {
+            PrefixSum += i;
+            int SuffixSum = totalsum - PrefixSum;
+            if (SuffixSum == PrefixSum) {
+                return true;
+            }
+        }
+        return false;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -28,6 +43,7 @@ public class PartitionArrayWithEqualSum_25 {
         for (int i = 0; i < Array.length; i++) {
             Array[i] = sc.nextInt();
         }
-        System.out.println("Can we partition the array into two subarray with equal sum : "+ArrayWithEqualSum(Array));
+        System.out.println("Can we partition the array into two subarray with equal sum O(3n): "+ArrayWithEqualSum(Array));
+        System.out.println("Can we partition the array into two subarray with equal sum O(3n): "+ArrayWithEqualSumInLessTImeComplexity(Array));
     }
 }
