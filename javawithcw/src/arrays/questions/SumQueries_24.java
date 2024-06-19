@@ -2,7 +2,7 @@ package arrays.questions;
 
 import java.util.Scanner;
 
-public class SumQueries {
+public class SumQueries_24 {
 
     public static void PrefixSumArrayInLessTimeComplexityWithoutExtraSpace(int[] array) {
         int n = array.length;
