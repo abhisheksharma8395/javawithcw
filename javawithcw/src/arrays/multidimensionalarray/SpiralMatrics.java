@@ -19,6 +19,29 @@ public class SpiralMatrics {
                 System.out.print(array[j][i] + " ");
             }
         }
+        System.out.println(" ");
+    }
+    public static void SpiralMatricsMakerOptimisely(int[][] array, int row) {
+        int left =0,right=row-1;
+        int top=0,bottom=row-1;
+        while(top<=bottom && left<=right) {
+            for (int j = left; j <= right; j++) {
+                System.out.print(array[top][j] + " ");
+            }
+            top++;
+            for (int j =top; j <= bottom; j++) {
+                System.out.print(array[j][right] + " ");
+            }
+            right--;
+            for (int j = right; j >= left; j--) {
+                System.out.print(array[bottom][j] + " ");
+            }
+            bottom--;
+            for (int j = bottom; j >= top; j--) {
+                System.out.print(array[j][left] + " ");
+            }
+            left++;
+        }
     }
 
     public static void main(String[] args) {
@@ -33,5 +56,6 @@ public class SpiralMatrics {
             }
         }
         SpiralMatricsMaker(Array, row);
+        SpiralMatricsMakerOptimisely(Array,row);
     }
 }
