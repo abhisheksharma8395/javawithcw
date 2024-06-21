@@ -1,5 +1,7 @@
 package arrays.questions;
 
+import arrays.CloningAnArray;
+
 import java.util.Scanner;
 
 public class RotateArrayKTimes {
@@ -34,10 +36,7 @@ public class RotateArrayKTimes {
         for (int i = 0; i < n-k ; i++) {
             arr[j++]=array[i];
         }
-        for(int i : arr){
-            System.out.print(i+" ");
-        }
-        System.out.println(" ");
+        CloningAnArray.print(arr);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
