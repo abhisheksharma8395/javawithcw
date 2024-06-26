@@ -51,8 +51,18 @@ public class SumOfRectangle {
                 array[i][j] = array[i][j] + array[i-1][j];
             }
         }
-        int sum = array[l2][r2]-array[l1-1][r2]-array[l2][r1-1]+array[l1-1][r1-1];
-        return sum;
+        int full = array[l2][r2];
+        int top=0,left=0,topLeft = 0;
+        if(l1>0){
+            top = array[l1-1][r2];
+        }
+        if(r1>0){
+            left = array[l2][r1-1];
+        }
+        if(l1>0 && r1>0){
+            topLeft = array[l1-1][r1-1];
+        }
+        return full-top-left+topLeft;
     }
 
     public static void main(String[] args) {
