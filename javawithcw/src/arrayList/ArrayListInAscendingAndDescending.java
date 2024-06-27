@@ -26,7 +26,7 @@ public class ArrayListInAscendingAndDescending {
         System.out.println("Original List "+l2);
         Collections.sort(l2);
         System.out.println("List Sorted in Ascending Order "+l2);
-        Collections.sort(l1,Collections.reverseOrder());
+        Collections.sort(l2,Collections.reverseOrder());
         System.out.println("List Sorted in Descending Order "+l2);
     }
 }
