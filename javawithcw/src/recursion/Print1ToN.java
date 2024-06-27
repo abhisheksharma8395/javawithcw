@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Print1ToN {
     public static void Increase(int n){
-        if(n==1){                      //BASE CASE
-            System.out.println(1);
+        if(n==1){
+            System.out.println(n);
             return;
         }
-        Increase(n-1);              //Solving Smaller Problem
-        System.out.println(n);         //Self Work
+        Increase(n-1);
+        System.out.println(n);
     }
 
     public static void main(String[] args) {
