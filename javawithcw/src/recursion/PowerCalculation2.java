@@ -3,23 +3,21 @@ package recursion;
 import java.util.Scanner;
 
 public class PowerCalculation2 {
-    public static int powercalculation(int value, int power) {
-        if (power == 0) {
+    public static int PowerCalculation(int a,int b){
+        if(b==0){                             // Base Case
             return 1;
         }
-        int smallpower = powercalculation(value,power/2);
-        if (power%2==0){
-            return smallpower*smallpower;
+        int number = PowerCalculation(a,b/2);      //Recursive Case
+        if(b%2==0){
+            return number * number;
         }
-        else{
-            return value*smallpower*smallpower;
-        }
+        return number * number * a;                 //Self Work
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int value = scanner.nextInt();
         int power = scanner.nextInt();
-        System.out.println(powercalculation(value,power));
+        System.out.println(PowerCalculation(value,power));
     }
 }
