@@ -3,13 +3,14 @@ package recursion;
 import java.util.Scanner;
 
 public class FibonicciSeries {
-    static int fibonicci(int val) {
-        if (val == 0 || val == 1) {          //base condition
-            return val;
+    public static int fibonicci(int n){
+        if(n==0){
+            return 0;
         }
-        //subproblem
-        return fibonicci(val - 1) + fibonicci(val - 2);
-        //+ is the self work
+        if(n==1){
+            return 1;
+        }
+        return fibonicci(n-1)+fibonicci(n-2);
     }
 
     public static void main(String[] args) {
