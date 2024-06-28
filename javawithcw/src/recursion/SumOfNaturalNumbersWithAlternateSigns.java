@@ -3,21 +3,19 @@ package recursion;
 import java.util.Scanner;
 
 public class SumOfNaturalNumbersWithAlternateSigns {
-    public static int sumwithalternatesigns(int val){   //10
-        if(val==1){
+    public static int SumWithAlternateSigns(int val) {   //10
+        if (val == 1) {                 // Base Case
             return 1;
         }
-        int subproblem=sumwithalternatesigns(val-1); //1-2+3-4+5-6+7-8+9-10
-        if(val%2==0){
-            return subproblem-val;
+        if (val % 2 == 0) {             // Self Work And Recursive Case
+            return SumWithAlternateSigns(val - 1) - val;
         }
-        else{
-            return subproblem+val;
-        }
+        return SumWithAlternateSigns(val - 1) + val;
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int val = scanner.nextInt();
-        System.out.println(sumwithalternatesigns(val));  //10
+        System.out.println(SumWithAlternateSigns(val));  //10
     }
 }
