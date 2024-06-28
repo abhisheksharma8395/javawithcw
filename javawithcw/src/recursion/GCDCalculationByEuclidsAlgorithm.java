@@ -14,8 +14,8 @@ public class GCDCalculationByEuclidsAlgorithm {
     }
 
     public static int OptimisedGCD(int val1, int val2) {  // Optimised Approach
-        if(val2%val1==0){
-            return val1;
+        if(val1==0){
+            return val2;
         }
         return OptimisedGCD(val2%val1,val1);
     }
