@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class SumOfDigits {
     public static int SumOfDigit(int n){
-        if(n<=0){
+        if(n<=0){                      //Base Case
             return 0;
         }
-        return n%10 + SumOfDigit(n/10);
+        return n%10 + SumOfDigit(n/10);  // Self Work + Recursive Condition
     }
 
     public static void main(String[] args) {
