@@ -13,20 +13,18 @@ public class GCDCalculationByEuclidsAlgorithm {
         return gcd(val1,val2,helper-1);
     }
 
-    public static int eagcdr(int val1,int val2){  // Optimised Approach
-        if(val1%val2==0){
-            return val2;
+    public static int OptimisedGCD(int val1, int val2) {  // Optimised Approach
+        if(val2%val1==0){
+            return val1;
         }
-        //Euclid Algorithm
-        //gcd(val1,val2)=gcd(val2,val1%val2)
-        return eagcdr(val2,val1%val2);
+        return OptimisedGCD(val2%val1,val1);
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int val1 = scanner.nextInt();
         int val2 = scanner.nextInt();
         int helper = Math.min(val1,val2);
-        System.out.println(eagcdr(val1,val2));
+        System.out.println(OptimisedGCD(val1,val2));
         System.out.println(gcd(val1,val2,helper));
     }
 }

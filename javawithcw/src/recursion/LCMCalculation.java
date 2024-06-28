@@ -9,7 +9,7 @@ public class LCMCalculation {
         int val1 = scanner.nextInt();
         int val2 = scanner.nextInt();
         //LCM * HCF = VAL1 * VAL2
-        int lcm = (val1*val2)/gcdCalculationByEuclidsAlgorithm.eagcdr(val1,val2);
+        int lcm = (val1*val2)/gcdCalculationByEuclidsAlgorithm.OptimisedGCD(val1,val2);
         System.out.println(lcm);
     }
 }
