@@ -1,13 +1,11 @@
 package recursion;
 import java.util.Scanner;
 public class PrintTheMaxValueOfAnArray {
-    private static int maxofarrbyrecursion(int[] arr,int idx){
-        if(idx == arr.length-1){
+    private static int MaxOfArrayByRecursion(int[] arr,int idx){
+        if(idx==arr.length-1){     // Base Case
             return arr[idx];
         }
-        int maxanswer = maxofarrbyrecursion(arr,idx+1);
-        return Math.max(arr[idx],maxanswer);
-
+        return Math.max(arr[idx],MaxOfArrayByRecursion(arr,idx+1)); //Self Work + Recursive Case
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -16,8 +14,6 @@ public class PrintTheMaxValueOfAnArray {
         for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
         }
-        System.out.println(maxofarrbyrecursion(arr,0));
-
-
+        System.out.println(MaxOfArrayByRecursion(arr,0));
     }
 }

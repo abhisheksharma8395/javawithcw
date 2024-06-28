@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class ArmstrongNumberByRecursion {
     public static int armstrong(int val){
-        if(val>=0 && val<=9){
-            return (int) Math.pow(val,3);
+        if(val==0){
+            return 0;
         }
         return (int)Math.pow(val%10,3)+armstrong(val/10);
     }
