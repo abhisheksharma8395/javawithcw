@@ -5,7 +5,9 @@ public class ReverseAString {
         if(s.isEmpty()){
             return "";
         }
-        return reverse(s.substring(1))+s.charAt(0);
+        char current = s.charAt(0);
+        String small = reverse(s.substring(1));
+        return  small+current;
         //time complexity = total number of calls * total time taken in one call
         //time complexity = n * n
         //time complexity = O(n^2)
@@ -14,11 +16,6 @@ public class ReverseAString {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.next();
         String p = reverse(s);
-        if(p.equals(s)){
-            System.out.println("Palindrome");
-        }
-        else {
-            System.out.println("Not Palindrome");
-        }
+        System.out.println(p);
     }
 }
