@@ -1,14 +1,15 @@
 package recursion;
 import java.util.Scanner;
 public class IsSorted {
-    public static boolean issorted(int[] array, int idx) {
-        if (idx == array.length-1) {                  //Base Case
-            return (array[array.length-1]>=array[array.length-2]);
+    public static boolean IsSorted(int[] array, int idx) {
+        if(idx== array.length){
+            return true;
         }
-        if (array[idx] > array[idx + 1]) {              // it checks for the array in ascending order
-            return false;                               // Base Case
+        if(array[idx+1]<array[idx]){
+            return false;
         }
-        return issorted(array, idx + 1);            // Subproblem
+        return IsSorted(array,idx);
+
     }
 
     public static void main(String[] args) {
@@ -18,6 +19,6 @@ public class IsSorted {
         for (int i = 0; i < array.length; i++) {
             array[i] = scanner.nextInt();
         }
-        System.out.println(issorted(array, 0));
+        System.out.println(IsSorted(array, 0));
     }
 }

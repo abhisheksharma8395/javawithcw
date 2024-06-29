@@ -4,16 +4,15 @@ import java.util.Scanner;
 
 public class IndicesInArrayList {
     private static ArrayList<Integer> indecesinarraylist(int[] arr, int target, int idx) {
-        ArrayList<Integer> ans = new ArrayList<>();  // we store the element from base case in this arraylist
-        if (idx == arr.length) {    // Base Case
-            return ans;  //return empty arraylist if element is not found
+        ArrayList<Integer> ans = new ArrayList<>();
+        if(idx==arr.length){
+            return ans;
         }
-
-        if (arr[idx]==target){      //self work
+        if(arr[idx]==target){
             ans.add(idx);
         }
-        ArrayList<Integer> smallProblem = indecesinarraylist(arr, target, idx+1);
-        ans.addAll(smallProblem);
+        ArrayList<Integer> SmallAns = indecesinarraylist(arr,target,idx+1);
+        ans.addAll(SmallAns);
         return ans;
     }
 
