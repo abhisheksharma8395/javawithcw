@@ -10,15 +10,17 @@ public class EvenNumberBeforeOddNumber {
     }
 
     public static void SortArrayInEvenOddOrder(int[] array) {
-        int n = array.length;
-        for (int i = 0; i < n / 2; i++) {
-            if (array[i] % 2 != 0 && array[n - i - 1] % 2 == 0) {
-                Swap(array,i,n-i-1);
+        int left = 0;
+        int right = array.length-1;
+        while(left<right){
+            while(left<right && array[left]%2==0){
+                left++;
             }
-            else if(array[i] % 2 == 0 && array[n - i - 1] % 2 == 0){
-                if (array[i]>array[n - i - 1]){
-                    Swap(array,i,n-i-1);
-                }
+            while(left<right && array[right]%2!=0){
+                right--;
+            }
+            if(left<right){
+                Swap(array,left,right);
             }
         }
         for (int i : array) {
