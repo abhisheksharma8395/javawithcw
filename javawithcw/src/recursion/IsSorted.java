@@ -1,14 +1,14 @@
 package recursion;
 import java.util.Scanner;
 public class IsSorted {
-    public static boolean IsSorted(int[] array, int idx) {
-        if(idx== array.length){
+    public static boolean IsSortedArray(int[] array, int idx) {
+        if(idx== array.length-1){
             return true;
         }
         if(array[idx+1]<array[idx]){
             return false;
         }
-        return IsSorted(array,idx);
+        return IsSortedArray(array,idx+1);
 
     }
 
@@ -19,6 +19,6 @@ public class IsSorted {
         for (int i = 0; i < array.length; i++) {
             array[i] = scanner.nextInt();
         }
-        System.out.println(IsSorted(array, 0));
+        System.out.println(IsSortedArray(array, 0));
     }
 }

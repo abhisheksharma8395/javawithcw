@@ -5,30 +5,28 @@ import java.util.Scanner;
 public class RemoveAllOccurrences {
     //que-remove all the occurrences of a from string abcax
     public static String removeOccurrence2(String s, char remove) {
-        if (s.isEmpty()) {
+        if(s.length()==0){
             return "";
         }
-        String smallAns = removeOccurrence2(s.substring(1), remove);
-        char currentCharacter = s.charAt(0);      //time complexity = no of calls * total time taken in one call
-        if (currentCharacter != remove) {         // time complexity = length of string + 1 * total time taken in one call
-            return currentCharacter+smallAns;                // time complexity = n * n
-        }                                         // time complexity = O(n^2)
-        else{
-            return smallAns;                      //String concatenation is of O(n) time complexity
+        char current = s.charAt(0);
+        String SmallAns = removeOccurrence2(s.substring(1),remove);
+        if(current==remove){
+            return current+SmallAns;
         }
+        return SmallAns;
     }
 
     public static String removeOccurrence(String s, char remove, int idx) {
-        if (idx == s.length()) {          //Base Case
+        if(idx==s.length()){
             return "";
         }
-        String small = removeOccurrence(s, remove, idx + 1);  //SubProblem
-        char currentCharacter = s.charAt(idx);
-        if (currentCharacter != remove) {       //Self Work
-            return currentCharacter + small;
-        } else {
-            return small;                            //Self Work + SubProblem
+        char current = s.charAt(idx);
+        String SmallAns = removeOccurrence(s,remove,idx+1);
+        if(current!=remove){
+            return current+SmallAns;
         }
+        return SmallAns;
+
         //time complexity = no of calls * total time taken in one call
         // time complexity = length of string + 1 * total time taken in one call
         // time complexity = n * n
