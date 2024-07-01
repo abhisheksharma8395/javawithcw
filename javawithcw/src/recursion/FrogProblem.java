@@ -18,6 +18,16 @@ public class FrogProblem {
         return Math.min(ans,ans1);
     }
 
+    public static int Frog(int[] array,int idx,int sum){
+        if(idx == array.length-1){
+            return sum;
+        }
+        if(idx == array.length-2){
+            return sum+Frog(array, idx+1,sum+Math.abs(array[idx+1]-array[idx]));
+        }
+        return Math.min(Frog(array,idx+1,sum+Math.abs(array[idx+1]-array[idx])), Frog(array,idx+2,sum+Math.abs(array[idx+2]-array[idx])));
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -26,5 +36,6 @@ public class FrogProblem {
             myarr[i] = sc.nextInt();
         }
         System.out.println(frogProblem(myarr,0));
+        System.out.println(Frog(myarr,0,0));
     }
 }
