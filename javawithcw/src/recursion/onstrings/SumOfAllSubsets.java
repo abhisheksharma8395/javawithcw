@@ -3,14 +3,13 @@ package recursion.onstrings;
 import java.util.Scanner;
 
 public class SumOfAllSubsets {
-    private static void SumOfSubsets(int[] arr, int sum, int idx) {
-        if (idx >= arr.length) {
-            System.out.print(sum+" ");
+    public static void SumOfArraySubsets(int[] array,int idx,int sum){
+        if(idx== array.length){
+            System.out.println(sum+" ");
             return;
         }
-        int num = arr[idx];
-        SumOfSubsets(arr, sum + num, idx + 1);        //include
-        SumOfSubsets(arr, sum, idx + 1);                   //exclude
+        SumOfArraySubsets(array,idx+1,sum);
+        SumOfArraySubsets(array,idx+1,sum+array[idx]);
     }
 
     public static void main(String[] args) {
@@ -20,6 +19,6 @@ public class SumOfAllSubsets {
         for (int i = 0; i < n; i++) {
             myarr[i] = sc.nextInt();
         }
-        SumOfSubsets(myarr, 0, 0);
+        SumOfArraySubsets(myarr, 0, 0);
     }
 }

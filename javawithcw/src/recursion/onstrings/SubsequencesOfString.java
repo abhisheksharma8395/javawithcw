@@ -25,8 +25,8 @@ public class SubsequencesOfString {
             return;
         }
         String rest = s.substring(1);
-        Subsequences(rest,s.charAt(0)+small);
         Subsequences(rest,small);
+        Subsequences(rest,small+s.charAt(0));
     }
 
     public static void main(String[] args) {
