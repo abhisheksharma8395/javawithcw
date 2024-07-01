@@ -1,31 +1,43 @@
 package recursion.onstrings;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class SubsequencesOfString {
-    ArrayList<String> sq = new ArrayList<>();
-    public static ArrayList<String> ssq(String s){
-        ArrayList<String> sq = new ArrayList<>();
+    public static ArrayList<String> SubSequences(String s){
+        ArrayList<String> ans = new ArrayList<>();
         if(s.isEmpty()){
-            sq.add(" ");
-            return sq;
+            ans.add("");
+            return ans;
         }
-        char a = s.charAt(0);
-        ArrayList<String> smallAnswer = ssq(s.substring(1));
-        for (String ss:smallAnswer){
-            sq.add(ss);
-            sq.add(a+ss);
+        char ch = s.charAt(0);
+        ArrayList<String> small = SubSequences(s.substring(1));
+        for (String i : small){
+            ans.add(i);
+            ans.add(ch+i);
         }
-        return sq;
+        return ans;
+    }
+    public static void Subsequences(String s,String small){
+        if(s.isEmpty()){
+            System.out.println(small);
+            return;
+        }
+        String rest = s.substring(1);
+        Subsequences(rest,s.charAt(0)+small);
+        Subsequences(rest,small);
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = sc.next();
-        ArrayList<String> subsequence = ssq(s);
+        ArrayList<String> subsequence = SubSequences(s);
+//        Collections.sort(subsequence);
         for(String i:subsequence){
-            System.out.println(i);
+            System.out.print(i+" ");
         }
+        System.out.println(" ");
+        Subsequences(s,"");
     }
 }
