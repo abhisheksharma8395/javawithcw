@@ -17,4 +17,7 @@ public class PalindromeString {
         System.out.println(palindrome(s,0,s.length()-1));
     }
 
+
+    long j = Integer.MIN_VALUE;
+
 }

@@ -5,14 +5,13 @@ import java.util.Scanner;
 // number could represent.Return the answer in any order
 public class AllPossibleLetterCombinationThatTheNumberCouldRepresent {
     private static void possibleCombination(String digit, String res, String[] mapping) {
-        if (digit.isEmpty()) {
+        if(digit.isEmpty()){
             System.out.println(res);
             return;
         }
-        int num = digit.charAt(0) - '0';
-        String currentString = mapping[num];
-        for (int i = 0; i < currentString.length(); i++) {
-            possibleCombination(digit.substring(1), res + currentString.charAt(i), mapping);
+        int num = digit.charAt(0)-'0';
+        for (int i = 0; i < mapping[num].length(); i++) {
+            possibleCombination(digit.substring(1),res+mapping[num].charAt(i),mapping);
         }
     }
 
