@@ -13,7 +13,7 @@ public class NegativesBeforePositives {
             while(array[j]>0){
                 j--;
             }
-            if(i<j){
+            if(i<j){                    // Swapping elements
                 swap(array,i,j);
             }
         }
