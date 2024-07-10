@@ -2,7 +2,7 @@ package searching;
 
 import java.util.Scanner;
 
-public class FirstOccureenceOptimise {
+public class FirstOccurrenceOptimise {
     public static int BinarySearchRecursively(int[] array, int target,int first,int last,int firstOccurence) {
         if (first>last) {
             return firstOccurence;
