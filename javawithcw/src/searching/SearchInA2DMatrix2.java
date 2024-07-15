@@ -5,18 +5,16 @@ import java.util.Scanner;
 public class SearchInA2DMatrix2 {
     public static boolean SearchIn2DMatrix2(int[][] array,int target){
         int n = array.length;
-        int m = array[0].length;
-        int low =0 ;
-        int high = (n * m)-1;
-        while (low<=high){
-            int mid = low + (high-low)/2;
-            if(array[mid%m][mid/m]==target){
+        int i = 0 ;
+        int j = array[0].length-1;
+        while (i<n && j>0){
+            if(array[i][j]==target){
                 return true;
-            } else if (array[mid%m][mid/m]>target) {
-                high = mid-1;
+            } else if (array[i][j]>target) {
+                j--;
             }
             else{
-                low = mid+1;
+                i++;
             }
         }
         return false;
