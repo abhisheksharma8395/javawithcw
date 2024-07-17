@@ -31,5 +31,3 @@ public class PeakElement {
         System.out.println(peakElement(array));
     }
 }
-
-}
