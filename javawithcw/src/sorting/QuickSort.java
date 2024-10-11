@@ -14,6 +14,7 @@ public class QuickSort {
     }
 
     public static int Partition(int[] array, int start, int end) {
+
         Random random = new Random();
         int ChooseIndex = random.nextInt(start,end+1); // Generate random index for pivot to optimise the code bet
         int Pivot = array[ChooseIndex];
