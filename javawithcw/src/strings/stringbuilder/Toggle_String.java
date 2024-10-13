@@ -8,15 +8,15 @@ import static java.lang.Character.*;
 public class Toggle_String {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-        StringBuilder toggle = new StringBuilder(s.length());
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
+        StringBuilder toggle = new StringBuilder(sc.nextLine());
+        for (int i = 0; i < toggle.length(); i++) {
+            char ch = toggle.charAt(i);
             if(isLowerCase(ch)){
-                toggle.append(toUpperCase(ch));
-            }
-            else{
-                toggle.append(toLowerCase(ch));
+                toggle.setCharAt(i,toUpperCase(ch));
+            } else if (ch==' ') {
+                continue;
+            } else{
+                toggle.setCharAt(i,toLowerCase(ch));
             }
         }
         System.out.println(toggle);
