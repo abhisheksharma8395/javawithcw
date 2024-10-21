@@ -8,7 +8,7 @@ public class Minimum_add_to_Make_Parenthesis_valid {
         int close_requirred = 0;
         for(int i=0; i<s.length();i++){
             char ch = s.charAt(i);
-            if(ch == '('){
+            if(ch == '('){ //if you found ( increase open_requirred by 1;
                 open_requirred++;
             }
             else{
