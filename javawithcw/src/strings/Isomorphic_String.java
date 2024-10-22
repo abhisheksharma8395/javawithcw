@@ -22,7 +22,7 @@ public class Isomorphic_String {
             else{
                 h1.put(ch1,ch2);
             }
-            if(h2.containsKey(ch2)){
+            if(h2.containsKey(ch2)){     //check is ch2 present in hashmap or not
                 if(h2.get(ch2)!=ch1){
                     return false;
                 }
