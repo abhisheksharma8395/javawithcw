@@ -1,6 +1,14 @@
 package binarytree;
 
 public class PrintElementOfNthLevel {
+    public static class BinaryTreeNode{
+        int val;
+        BinaryTreeNode LeftNode;
+        BinaryTreeNode RightNode;
+        public BinaryTreeNode(int val){
+            this.val = val;
+        }
+    }
     public static void main(String[] args) {
         BinaryTreeNode root = new BinaryTreeNode(1);
         BinaryTreeNode a = new BinaryTreeNode(7);
@@ -19,35 +27,27 @@ public class PrintElementOfNthLevel {
         e.LeftNode = f;
         d.LeftNode = g;
         d.RightNode = h;
-        int n = height(root)+1;
-        System.out.println(n);
-        for (int i = 1; i <=n; i++) {
-            Nthlevel(root,i);
+        int ht = height(root);
+        for (int i = 1; i <= ht; i++) {
+            ElementAtNthLevel(root,i,ht);
             System.out.println(" ");
         }
-
     }
-    public static int height(BinaryTreeNode root){
-        if(root==null ||(root.LeftNode==null && root.RightNode==null)) return 0;
-        return 1+Math.max(height(root.LeftNode),height(root.RightNode));
-    }
-    public static void Nthlevel(BinaryTreeNode root,int n){
-        if (root==null) return;
-        if(n==1){
-            System.out.print(root.data+" ");
+    public static void ElementAtNthLevel(BinaryTreeNode root,int levels,int height){
+        if(levels>height){
             return;
         }
-        Nthlevel(root.LeftNode,n-1);
-        Nthlevel(root.RightNode,n-1);
-    }
-
-    public static class BinaryTreeNode {
-        int data;
-        BinaryTreeNode LeftNode;
-        BinaryTreeNode RightNode;
-
-        public BinaryTreeNode(int data) {
-            this.data = data;
+        if(root==null) return;
+        if(levels == 1){
+            System.out.print(root.val + " ");
+            return;
         }
+        ElementAtNthLevel(root.LeftNode,levels-1,height);
+        ElementAtNthLevel(root.RightNode,levels-1,height);
+    }
+    public static int height(BinaryTreeNode root){
+        if(root==null) return 0;
+        if(root.LeftNode == null && root.RightNode == null) return 1;
+        return 1+Math.max(height(root.LeftNode),height(root.RightNode));
     }
 }
