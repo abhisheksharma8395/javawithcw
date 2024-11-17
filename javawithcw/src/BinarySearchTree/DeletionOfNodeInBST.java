@@ -26,7 +26,7 @@ public class DeletionOfNodeInBST {
         return root;
     }
     public static void DeleteNode(BinarySearchTreeNode root){
-        
+        //delet
     }
 
     public static void main(String[] args) {
