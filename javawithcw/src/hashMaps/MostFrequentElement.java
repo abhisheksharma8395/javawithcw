@@ -8,26 +8,22 @@ import java.util.Scanner;
 public class MostFrequentElement {
     public static int getMostFrequentElement(int[] arr) {          //O(2n)
         Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < arr.length; i++) {
-            if(map.containsKey(arr[i])) {
-                map.put(arr[i], map.get(arr[i]) + 1);
-            }
-            else {
-                map.put(arr[i], 1);
-            }
-        }
-        int maxFreq = 0;
-        int maxFreqNum = 0;
-        for (int i = 0; i < arr.length-1; i++) {
-            if(arr[i] == arr[i+1]) {
-                continue;
-            }
-            if(maxFreq < map.get(arr[i])) {
-                maxFreq = map.get(arr[i]);
-                maxFreqNum = arr[i];
+        for (int j : arr) {
+            if (map.containsKey(j)) {
+                map.put(j, map.get(j) + 1);
+            } else {
+                map.put(j, 1);
             }
         }
-        return maxFreqNum;
+        int maxFreq = -1;
+        int ans = -1;
+        for (int key : map.keySet()) {
+            if(maxFreq < map.get(key)) {
+                maxFreq = map.get(key);
+                ans = key;
+            }
+        }
+        return ans;
     }
     public static int getMostFrequentElement1(int[] arr) {                    //O(nlogn)
         int[] arr1;
