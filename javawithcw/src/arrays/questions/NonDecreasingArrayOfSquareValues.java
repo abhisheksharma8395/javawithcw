@@ -3,11 +3,6 @@ package arrays.questions;
 import java.util.Scanner;
 
 public class NonDecreasingArrayOfSquareValues {
-    public static void Swap(int[] array,int a, int b) {
-        int temp = (int) Math.pow(array[a],2);
-        array[a] = (int) Math.pow(array[b],2);
-        array[b] = temp;
-    }
 
     public static void SortArrayOfSquareValues(int[] array) {
         int n = array.length;

@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class basicSTL {
     public static void main(String[] args) {
-        Queue<Integer> q = new LinkedList<Integer>();
+        Queue<Integer> q = new LinkedList<>();
         q.add(11);
         q.add(12);
 

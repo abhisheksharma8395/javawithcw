@@ -14,7 +14,7 @@ public class reversingAQueue {
     }
 
     public static void main(String[] args) {
-        Queue<Integer> queue = new LinkedList<Integer>();
+        Queue<Integer> queue = new LinkedList<>();
         queue.add(63);
         queue.add(27);
         queue.add(88);
