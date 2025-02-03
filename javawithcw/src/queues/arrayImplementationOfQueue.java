@@ -63,7 +63,7 @@ public class arrayImplementationOfQueue {
         q.display(); // 27,44,49,75
         q.dequeue();
         q.display(); // 44,49,75
-        System.out.println(q.peek()); // 49
+        System.out.println(q.peek()); // 44
         System.out.println(q.size()); //3
 
     }
