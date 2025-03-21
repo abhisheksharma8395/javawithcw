@@ -19,7 +19,7 @@ public class FractionalKnapsack {
         }
     }
     public static void FractionalKnapSack(List<Integer> itemPrice,List<Integer> itemWeight, int w) {
-        List<item> items = new ArrayList<item>();
+        List<item> items = new ArrayList<>();
         for(int i=0;i<itemPrice.size();i++){
             item temp = new item(itemPrice.get(i),itemWeight.get(i));
             items.add(temp);
