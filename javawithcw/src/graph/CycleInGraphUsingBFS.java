@@ -1,16 +1,19 @@
 package graph;
 import java.util.*;
 
-public class CycleInGraphBfsTraversal {
+public class CycleInGraphUsingBFS {
     static class Pair{
         int parent;
         int child;
-        public Pair(int parent, int child) {
+        public Pair(int child, int parent) {
             this.parent = parent;
             this.child = child;
         }
     }
-    public static boolean bfsTraversal(List<List<Integer>> graph, Queue<Pair> queue,boolean[] isVisited){
+    public static boolean bfsTraversal(List<List<Integer>> graph,int current,boolean[] isVisited){
+        Queue<Pair> queue = new LinkedList<>();
+        queue.add(new Pair(current,-1));
+        isVisited[current] = true;
         while(!queue.isEmpty()){
             Pair pair = queue.remove();
             int parent = pair.parent;
@@ -18,9 +21,9 @@ public class CycleInGraphBfsTraversal {
             for (int neighbour : graph.get(child)) {
                 if(neighbour == parent) continue;
                 else if(isVisited[neighbour]) return true;
-                else{
+                else if(!isVisited[neighbour]){
                     isVisited[neighbour] = true;
-                    queue.add(new Pair(child, neighbour));
+                    queue.add(new Pair(neighbour, child));
                 }
             }
         }
@@ -42,16 +45,12 @@ public class CycleInGraphBfsTraversal {
                 graph.get(i).add(sc.nextInt());
             }
         }
-        boolean[] visited = new boolean[n];
-        boolean flag = false;
-        for (int i = 0; i < n; i++) {
-            if(!visited[i]){
-                visited[i] = true;
-                Queue<Pair> queue = new LinkedList<>();
-                queue.add(new Pair(-1, i));
-                if(bfsTraversal(graph,queue,visited)){
-                    flag = true;
-                }
+        boolean flag = false;      //some time graph given is disconnected like 0->1 2->3
+        boolean[] isVisited = new boolean[graph.size()];
+        for (int i = 0; i < graph.size(); i++) {
+            if(!isVisited[i] && bfsTraversal(graph,i,isVisited)){
+                flag = true;
+                break;
             }
         }
         if(flag){
