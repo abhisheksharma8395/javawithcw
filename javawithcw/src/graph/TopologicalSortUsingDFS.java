@@ -6,14 +6,14 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class TopologicalSortUsingDFS {
-    public static void DFS(List<List<Integer>> graph,int currentVertex,boolean[] visited,Stack<Integer> stack) {
-        visited[currentVertex] = true;
-        for (int i : graph.get(currentVertex)) {
-            if (!visited[i]) {
-                DFS(graph, i, visited, stack);
+    public static void DFS(List<List<Integer>> graph,int current,boolean[] visited,Stack<Integer> st) {
+        visited[current] = true;
+        for(int neighbour : graph.get(current)) {
+            if (!visited[neighbour]) {
+                DFS(graph,neighbour,visited,st);
             }
         }
-        stack.push(currentVertex);
+        st.push(current);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

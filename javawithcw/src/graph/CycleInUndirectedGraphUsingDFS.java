@@ -2,7 +2,7 @@ package graph;
 
 import java.util.*;
 
-public class CycleInAGraphUsingDFS {
+public class CycleInUndirectedGraphUsingDFS {
     static class Pair {
         int parent;
         int child;
