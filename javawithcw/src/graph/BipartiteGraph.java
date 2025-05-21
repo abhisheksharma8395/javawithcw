@@ -2,7 +2,7 @@ package graph;
 import java.util.*;
 public class BipartiteGraph {
     public static boolean IsBipartiteGraphBFS(List<List<Integer>> graph,int current,int[] colors) {
-        Queue<Integer> queue = new LinkedList<Integer>();
+        Queue<Integer> queue = new LinkedList<>();
         queue.add(current);
         colors[current] = 0;          // 0-Red 1-Blue
         while (!queue.isEmpty()) {
