@@ -1,7 +1,7 @@
 package graph;
 import java.util.*;
 
-public class CycleInGraphUsingBFS {
+public class CycleInUndirectedGraphUsingBFS {
     static class Pair{
         int parent;
         int child;
