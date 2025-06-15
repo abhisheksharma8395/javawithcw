@@ -1,9 +1,11 @@
 package graph;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+import java.util.Scanner;
+// we can also  implement dijkstra using this method time complexity - O(V^2)
+//but using priority queue it is VlogE so dijkstra using PriorityQueue is good is we have parse graph
+// without priority Queue is good for Dense Graph
 public class DijkstraWithoutPriorityQueue {
     public static class Pair{
         int vertex;
@@ -36,5 +38,28 @@ public class DijkstraWithoutPriorityQueue {
             explore[j] = true;
         }
         return distance;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<List<Pair>> graph = new ArrayList<>();
+        System.out.println("Enter the number of vertices");
+        int n = sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            graph.add(new ArrayList<>());
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.println("number of vertex connected with " + i + "th vertex");
+            int v = sc.nextInt();
+            System.out.println("Enter all " + v + " connected vertices and their respective weight:");
+            for (int j = 0; j < v; j++) {
+                graph.get(i).add(new Pair(sc.nextInt(), sc.nextInt()));
+            }
+        }
+        int[] distance = new int[n];
+        System.out.println("Enter the source vertex");
+        distance = dijkstra(graph,sc.nextInt());
+        for(int i : distance){
+            System.out.print(i + " ");
+        }
     }
 }
